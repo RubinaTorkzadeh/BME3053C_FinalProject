@@ -1,92 +1,82 @@
-# Sleep Disorder Prediction using Machine Learning
+Sleep Disorder Classification Model
+Overview
 
-## Overview
-This project analyzes a publicly available sleep health dataset containing lifestyle and physiological variables such as sleep duration, stress level, BMI, occupation, and heart rate.
+This project builds a machine learning model to classify sleep disorders based on lifestyle and health-related features. Using a Random Forest Classifier, the model predicts whether an individual has:
 
-A supervised machine learning **multi-class classification model** is developed to predict an individual's sleep condition:
+No sleep disorder
+Insomnia
+Sleep apnea
 
-- 0 = No Sleep Disorder (Normal)
-- 1 = Insomnia
-- 2 = Sleep Apnea
+The project also includes visualizations to better understand patterns and relationships within the dataset.
 
-The goal is to identify which factors contribute most strongly to different sleep disorders and demonstrate how machine learning can be used to analyze sleep health outcomes.
+Team Members
+Gia Bhatla
+Breannah Carrero
+Arnav Kumbham
+Rubina Torkzadeh
+AI Disclaimer
 
----
+Some parts of this code were developed with the assistance of AI tools, primarily for syntax guidance and generating visualization logic. All core concepts, model design, and analysis were implemented and verified by the team.
 
-## Dataset
-Source: Kaggle Sleep Health and Lifestyle Dataset  
-- 374 samples  
-- 13 features  
+Features
+Data preprocessing and cleaning
+Label encoding for categorical variables
+Supervised machine learning model (Random Forest)
+Model evaluation using accuracy and classification report
+Data visualization with heatmaps, boxplots, and histograms
+Model Details
+Algorithm: Random Forest Classifier
+Train/Test Split: 80% training / 20% testing
+Classes:
+0 → None
+1 → Insomnia
+2 → Sleep Apnea
+Visualizations
+Model Performance
+Heatmap of precision, recall, and F1-score for each class
+Feature Relationships
+Sleep Duration vs Disorder (boxplot and distribution)
+Stress Level vs Disorder (boxplot and distribution)
+BMI Category vs Disorder (countplot)
+Physical Activity vs Disorder (boxplot)
+Heart Rate vs Disorder (boxplot)
+Installation & Requirements
 
-The dataset includes demographic, physiological, and lifestyle-related variables.
+Install required libraries before running:
 
----
+pip install pandas numpy matplotlib seaborn scikit-learn
+How to Run
+Open the notebook in Google Colab
+Run all cells
+Upload your dataset when prompted (CSV or Excel format)
+View model performance and generated graphs
+Dataset Requirements
 
-## Problem Type
-This is a **multi-class classification problem**, where the model predicts one of three possible sleep health outcomes.
+Your dataset should include features such as:
 
----
+Sleep Duration
+Stress Level
+BMI Category
+Physical Activity Level
+Heart Rate
+Sleep Disorder (target column)
 
-## Methods
+Optional columns like "Person ID" will be automatically removed.
 
-### Data Preprocessing
-- Missing values in `Sleep Disorder` filled with "None"
-- Label encoding applied to convert categorical variables into numeric form
-- Feature scaling applied for Logistic Regression
+Output
 
-### Models Used
-- Logistic Regression (baseline linear model)
-- Random Forest Classifier (non-linear ensemble model)
+The model will output:
 
----
+Accuracy score
+Classification report (precision, recall, F1-score)
+Multiple graphs for analysis and interpretation
+Key Insights
 
-## Evaluation Metrics
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Confusion Matrix (3×3)
+This project demonstrates how lifestyle factors such as stress, sleep duration, and physical activity correlate with sleep disorders, and how supervised learning can be applied to a healthcare classification problem.
 
----
-
-## Results
-
-### Model Performance
-- Logistic Regression: ~85–93% accuracy
-- Random Forest: ~90–96% accuracy
-
-Random Forest performed better due to its ability to capture non-linear relationships between features.
-
----
-
-## Key Findings
-
-The most important predictors of sleep disorders were:
-
-- BMI Category
-- Blood Pressure
-- Occupation
-- Sleep Duration
-- Stress Level
-
-These results suggest that both physiological health and lifestyle factors significantly influence sleep conditions.
-
----
-
-## Conclusion
-Machine learning models can effectively classify sleep health conditions and identify key contributing factors. This study demonstrates how lifestyle and physiological variables are strongly associated with specific sleep disorders such as insomnia and sleep apnea.
-
----
-
-## Technologies Used
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-- Seaborn
-
----
-
-## Author
-Sleep Health Machine Learning Project (Class Assignment)
+Future Improvements
+Test additional models (Logistic Regression, SVM, XGBoost)
+Perform hyperparameter tuning
+Add cross-validation
+Improve feature engineering
+Deploy as a web application
